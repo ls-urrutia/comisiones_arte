@@ -19,23 +19,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" style="margin-top: 45px">
-                 <h4>Artist Dashboard</h4><hr>
+                 <h4 class= "text-white" >Artist Dashboard</h4><hr>
                  <table class="table table-striped table-inverse table-responsive">
-                     <thead class="thead-inverse">
+                     <thead class="thead-inverse text-white">
                          <tr>
-                             <th>Name</th>
+                             <th>Nombre</th>
                              <th>Email</th>
-                             <th>Pseudonym</th>
-                             <th>Action</th>
+                             <th>Seudonimo</th>
+                             <th>Acción</th>
                          </tr>
                          </thead>
-                         <tbody>
+                         <tbody class="text-white">
                              <tr>
                                  <td scope="row">{{ Auth::guard('artista')->user()->name }}</td>
                                  <td>{{ Auth::guard('artista')->user()->email }}</td>
                                  <td>{{ Auth::guard('artista')->user()->seudonimo }}</td>
                                  <td>
-                                     <a href="{{ route('artista.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                     <a href="{{ route('artista.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deslogearse</a>
                                      <form action="{{ route('artista.logout') }}" id="logout-form" method="post">@csrf</form>
                                  </td>
                              </tr>

@@ -7,11 +7,11 @@
     <title>Registro de Artista</title>
     <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
 </head>
-<body>
+<body class="bg-dark">
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4" style="margin-top: 45px">
-                 <h4>Registro de Artista</h4><hr>
+                 <h4 class="text-white">Registro de Artista</h4><hr>
                  <form action="{{ route('artista.create') }}" method="post">
                     @if (Session::get('success'))
                         <div class="alert alert-success">
@@ -25,36 +25,36 @@
                     @endif
 
                     @csrf
-                     <div class="form-group">
-                         <label for="name">Name</label>
-                         <input type="text" class="form-control" name="name" placeholder="Enter full name" value="{{ old('name') }}">
+                     <div class="form-group text-white">
+                         <label for="name">Nombre</label>
+                         <input type="text" class="form-control" name="name" placeholder="Ingrese nombre y apellido" value="{{ old('name') }}">
                          <span class="text-danger">@error('name'){{ $message }}@enderror</span>
                      </div>
-                     <div class="form-group">
+                     <div class="form-group text-white">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
+                        <input type="text" class="form-control" name="email" placeholder="Ingrese Email" value="{{ old('email') }}">
                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>
                     </div>
-                    <div class="form-group">
-                        <label for="seudonimo">Pseudonym (Or how you want to be presented)</label>
-                        <input type="text" class="form-control" name="seudonimo" placeholder="Enter seudonimo name" value="{{ old('seudonimo') }}">
+                    <div class="form-group text-white">
+                        <label for="seudonimo">Seudónimo (O como te gustaría ser presentado)</label>
+                        <input type="text" class="form-control" name="seudonimo" placeholder="Ingrese seudónimo" value="{{ old('seudonimo') }}">
                         <span class="text-danger">@error('seudonimo'){{ $message }}@enderror</span>
                     </div>
-                     <div class="form-group">
-                         <label for="password">Password</label>
-                         <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
+                     <div class="form-group text-white">
+                         <label for="password">Contraseña</label>
+                         <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña" value="{{ old('password') }}">
                          <span class="text-danger">@error('password'){{ $message }}@enderror</span>
                      </div>
-                     <div class="form-group">
-                        <label for="cpassword">Confirm Password</label>
-                        <input type="password" class="form-control" name="cpassword" placeholder="Enter confirm password" value="{{ old('cpassword') }}">
+                     <div class="form-group text-white">
+                        <label for="cpassword">Confirmación Contraseña</label>
+                        <input type="password" class="form-control" name="cpassword" placeholder="Confirme su contraseña" value="{{ old('cpassword') }}">
                         <span class="text-danger">@error('cpassword'){{ $message }}@enderror</span>
                     </div>
                      <div class="form-group">
                          <button type="submit" class="btn btn-primary">Register</button>
                      </div>
                      <br>
-                     <a href="{{ route('artista.login') }}">I already have an account, Login now</a>
+                     <a href="{{ route('artista.login') }}">Ya tengo una cuenta, iniciar sesión ahora</a>
                  </form>
             </div>
         </div>

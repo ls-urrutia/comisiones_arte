@@ -14,6 +14,7 @@ Route::middleware(['guest:artista','PreventBackHistory'])->group(function(){
 
 Route::middleware(['auth:artista','PreventBackHistory'])->group(function(){
      Route::view('/home','dashboard.artista.home')->name('home');
+     Route::view('/calendario','dashboard.artista.calendario')->name('calendario');
      Route::post('logout',[ArtistaController::class,'logout'])->name('logout');
      Route::resource('/portafolio','App\Http\Controllers\Artista\FileController')->names('files');
 });

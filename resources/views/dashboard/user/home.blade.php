@@ -7,26 +7,26 @@
     <title>User Dashboard | Home</title>
     <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
 </head>
-<body>
+<body class="bg-dark">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3" style="margin-top: 45px">
-                 <h4>User Dashboard</h4><hr>
-                 <table class="table table-striped table-inverse table-responsive">
-                     <thead class="thead-inverse">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-6 offset-md-3 " style="margin-top: 45px">
+                 <h4 class="text-white">User Dashboard</h4><hr>
+                 <table class="table table-striped table-inverse table-responsive ">
+                     <thead class="thead-inverse text-white"">
                          <tr>
-                             <th>Name</th>
+                             <th>Nombre</th>
                              <th>Email</th>
-                             <th>Action</th>
+                             <th>Acción</th>
                          </tr>
-                         </thead>
-                         <tbody>
-                             <tr>
-                                 <td>{{ Auth::guard('web')->user()->name }}</td>
+                         </thead >
+                         <tbody" >
+                             <tr class="bg-dark text-white"">
+                                 <td >{{ Auth::guard('web')->user()->name }}</td>
                                  <td>{{ Auth::guard('web')->user()->email }}</td>
                                  <td>
-                                     <a href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>
+                                     <a  href="{{ route('user.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deslogearse</a>
                                      <form action="{{ route('user.logout') }}" method="post" class="d-none" id="logout-form">@csrf</form>
                                  </td>
                              </tr>

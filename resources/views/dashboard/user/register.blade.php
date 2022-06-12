@@ -7,12 +7,12 @@
     <title>User Register</title>
     <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}">
 </head>
-<body>
+<body class="bg-dark">
 
-    <div class="container">
+    <div class="container text-white">
         <div class="row">
             <div class="col-md-4 offset-md-4" style="margin-top: 45px;">
-                  <h4>User Register</h4><hr>
+                  <h4 class="text-white">Registro de usuario</h4><hr>
                   <form action="{{ route('user.create') }}" method="post" autocomplete="off">
                     @if (Session::get('success'))
                          <div class="alert alert-success">
@@ -28,29 +28,29 @@
                     @csrf
                       <div class="form-group">
                           <label for="name">Name</label>
-                          <input type="text" class="form-control" name="name" placeholder="Enter full name" value="{{ old('name') }}">
+                          <input type="text" class="form-control" name="name" placeholder="Ingrese nombre y apellido" value="{{ old('name') }}">
                           <span class="text-danger">@error('name'){{ $message }} @enderror</span>
                       </div>
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
+                        <input type="text" class="form-control" name="email" placeholder="Ingrese su e-mail" value="{{ old('email') }}">
                         <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                     </div>
                       <div class="form-group">
                           <label for="password">Password</label>
-                          <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">
+                          <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña" value="{{ old('password') }}">
                           <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                       </div>
                       <div class="form-group">
                         <label for="cpassword">Confirm Password</label>
-                        <input type="password" class="form-control" name="cpassword" placeholder="Enter confirm password" value="{{ old('cpassword') }}">
+                        <input type="password" class="form-control" name="cpassword" placeholder="Confirme su contraseña" value="{{ old('cpassword') }}">
                         <span class="text-danger">@error('cpassword'){{ $message }} @enderror</span>
                     </div>
                       <div class="form-group">
-                          <button type="submit" class="btn btn-primary">Register</button>
+                          <button type="submit" class="btn btn-primary">Registrar</button>
                       </div>
                       <br>
-                      <a href="{{ route('user.login') }}">I already have an account</a>
+                      <a href="{{ route('user.login') }}">Ya tengo una cuenta</a>
                   </form>
             </div>
         </div>
